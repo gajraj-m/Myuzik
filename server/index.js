@@ -6,6 +6,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const userRouter = require("./routes/user");
 const authRouter = require("./routes/auth");
+const postRouter = require("./routes/post");
 
 const app = express();
 const PORT = 8080 || process.env.PORT;
@@ -28,6 +29,7 @@ app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use("/api/user", userRouter); // rest APIs, to make code cleaner
 app.use("/api/auth", authRouter);
+app.use("/api/post", postRouter);
 
 
 

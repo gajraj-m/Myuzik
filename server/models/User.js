@@ -41,6 +41,16 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false
     },
+    bio: {
+      type: String,
+      min: 10,
+      max: 100
+    },
+    location: {
+      type: String,
+      max: 50
+    },
+    
   },
   { timestamps: true }
 );
