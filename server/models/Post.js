@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema(
   {
-    username: {
+    userId: {
         type: String,
         required: true
     },

@@ -1,13 +1,19 @@
 import React from "react";
-import Button from "@mui/material/Button";
-import PersonIcon from "@mui/icons-material/Person";
+import Rightbar from "../../components/rightbar/Rightbar";
+import Sidebar from "../../components/sidebar/Sidebar";
+import Feed from "../../components/feed/Feed";
+import Topbar from "../../components/topbar/Topbar";
+import "./home.css";
 
 const Home = () => {
   return (
     <div>
-      This is home page
-      <Button variant="contained">Home button</Button>
-      <PersonIcon/>
+      <Topbar />
+      <div className="homeContainer">
+        <Sidebar />
+        <Feed />
+        <Rightbar />
+      </div>
     </div>
   );
 };
