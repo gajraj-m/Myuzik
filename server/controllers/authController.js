@@ -20,7 +20,7 @@ const register = async (req, res) => {
     res.status(200).json(user);
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.json(err);
   }
 }
 
@@ -42,7 +42,6 @@ const login = async (req, res) => {
     res.status(500).json(err);
   }
 }
-
 // export all functions as an object
 module.exports = {
     register,

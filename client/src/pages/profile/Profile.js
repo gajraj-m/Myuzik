@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./profile.css";
 import Rightbar from "../../components/rightbar/Rightbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Topbar from "../../components/topbar/Topbar";
+import { AuthContext } from '../../context/AuthContext';
 
 export default function Profile() {
+  const {user} = useContext(AuthContext);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <div>
@@ -22,13 +24,13 @@ export default function Profile() {
               />
               <img
                 className="profileUserImg"
-                src={`${PF}person/7.jpeg`}
+                src={user.profilePic ? PF+user.profilePic : PF+"avatar.png"}
                 alt=""
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">Gajraj Mohini</h4>
-              <span className="profileInfoDesc">Better than FB eh?</span>
+              <h4 className="profileInfoName">{user.username}</h4>
+              <span className="profileInfoDesc">{user.bio || "Hey its me"}</span>
             </div>
           </div>
           <div className="profileRightBottom">
